@@ -51,6 +51,12 @@
                             </form>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{route('admin.portfolio.index')}}">
+                                <i class="fa-solid fa-list fa-lg fa-fw"></i> list
+                            </a>
+                        </li>
+
                     </ul>
 
                 </div>

@@ -38,7 +38,13 @@ class PortfolioController extends Controller
      */
     public function store(StoreportfolioRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $newportfolio = new portfolio;
+        foreach ($data as $key => $value) {
+            $newportfolio->$key = $value;
+        }
+        
     }
 
     /**
@@ -49,7 +55,7 @@ class PortfolioController extends Controller
      */
     public function show(portfolio $portfolio)
     {
-        //
+        return view('admin.show', compact('portfolio'));
     }
 
     /**

@@ -29,7 +29,7 @@ Route::middleware(['auth'])
     // - il controller DashboardController appartiene al namespace Admin
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('portfolio-show-all', portfolioController::class);
+    Route::resource('portfolio', portfolioController::class);
 
 });
 
