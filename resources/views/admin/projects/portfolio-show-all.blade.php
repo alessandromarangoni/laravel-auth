@@ -9,8 +9,7 @@
                 <img class="card-img-top" src="{{ $portfolio->image }}" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{ $portfolio->title }}</h5>
-                    <p class="card-text">{{ $portfolio->content }}</p>
-                    <a href="{{route('admin.portfolio.show', $portfolio)}}">link</a>
+                    <a href="{{route('admin.portfolio.show', $portfolio)}}" class="btn btn-dark">See More</a>
                 </div>
             </div>
         @endforeach

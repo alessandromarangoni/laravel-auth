@@ -57,6 +57,12 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('admin.portfolio.create') }}">
+                                <i class="fa-solid fa-plus   fa-lg fa-fw"></i> Aggiungi progetto
+                            </a>
+                        </li>
+
                     </ul>
 
                 </div>

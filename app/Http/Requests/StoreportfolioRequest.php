@@ -24,7 +24,14 @@ class StoreportfolioRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "title" => "required|min:5|max:250",
+            "content" => "max:2500",
+            "image" => "url|max:2500",
+        ];
+    }
+    public function messages() {
+        return [
+            "title.required" => "Ogni post deve avere un titolo"
         ];
     }
 }

@@ -17,7 +17,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios=Portfolio::all();
-        return view('admin.portfolio-show-all',compact('portfolios'));
+        return view('admin.projects.portfolio-show-all',compact('portfolios'));
     }
 
     /**
@@ -27,7 +27,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -38,12 +38,13 @@ class PortfolioController extends Controller
      */
     public function store(StoreportfolioRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
-        $newportfolio = new portfolio;
-        foreach ($data as $key => $value) {
-            $newportfolio->$key = $value;
-        }
+        $newPortfolio = new Portfolio();
+        $newPortfolio->fill($data);
+        $newPortfolio->save();
+
+        return to_route("admin.portfolio.show", $newPortfolio);
         
     }
 
@@ -55,7 +56,7 @@ class PortfolioController extends Controller
      */
     public function show(portfolio $portfolio)
     {
-        return view('admin.show', compact('portfolio'));
+        return view('admin.projects.show', compact('portfolio'));
     }
 
     /**
